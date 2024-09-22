@@ -7,15 +7,25 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #ffeef8;
-            color: #333;
             margin: 0;
             padding: 20px;
+            height: 100vh;
+            background: linear-gradient(270deg, #ffeef8, #ff66b3, #ffeef8);
+            background-size: 300% 300%;
+            animation: gradient-animation 10s ease infinite;
         }
+
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         h1 {
             color: #ff66b3;
             text-align: center;
         }
+
         .recipe {
             border: 2px solid #ff66b3;
             border-radius: 10px;
