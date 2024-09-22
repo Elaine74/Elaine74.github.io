@@ -13,6 +13,7 @@
             background: linear-gradient(270deg, #ffeef8, #ff66b3, #ffeef8);
             background-size: 300% 300%;
             animation: gradient-animation 10s ease infinite;
+            color: #333;
         }
 
         @keyframes gradient-animation {
@@ -22,7 +23,7 @@
         }
 
         h1 {
-            color: #ffffff;
+            color: white; /* Title color */
             text-align: center;
         }
 
@@ -33,9 +34,33 @@
             margin: 20px 0;
             background-color: #fff;
         }
+
+        .toggle-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #ff66b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        body.dark-mode {
+            background: #333;
+            color: white;
+        }
+
+        body.dark-mode .recipe {
+            background-color: #444;
+            border: 2px solid #555;
+        }
     </style>
 </head>
 <body>
+
+    <button class="toggle-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 
     <h1>Welcome to Grandma's Recipe Book!</h1>
 
@@ -64,6 +89,12 @@
         <p><strong>Instructions:</strong></p>
         <p>1. Cream butter and sugar. 2. Mix in flour and chocolate chips. 3. Bake at 350°F for 10-12 minutes.</p>
     </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
 
 </body>
 </html>
